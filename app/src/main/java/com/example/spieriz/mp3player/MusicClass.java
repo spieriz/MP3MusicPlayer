@@ -2,7 +2,6 @@ package com.example.spieriz.mp3player;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.widget.LinearLayout;
 
 /**
  * Created by spieriz on 2018-06-13.
@@ -27,7 +26,13 @@ class MusicClass {
         int min = sec / 60;
         sec = sec % 60;
 
-        return "" + min + ":" + sec;
+        String strSec;
+        if (sec < 10)
+            strSec = "0" + sec;
+        else
+            strSec = "" + sec;
+
+        return "" + min + ":" + strSec;
     }
 
     public int getMusicId(){
